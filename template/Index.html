@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:black">
+        <form action="{{url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>Age</h3>
+            <input id="first" name="Year" type="number">
+            <h3>What is your annual income?</h3><br><input id="second" name="Income per annum" type="number" required="required">
+            <h3>What is your average expenditure per month?</h3><input id="third" name="monthly expenditure" type="number" required="required">
+            <h3>How many cars do you own?</h3><input id="third" name="car ownership" type="number" required="required">
+            <h3>How many dependants do you have currently?</h3><br><input id="fourth" name="Children Present" type="number" required="required">
+            <h3>How many total dependants do you have?</h3><br><input id="fifth" name="Total Children" type="number" required="required">
+            <h3>Which Country do you live in?</h3>
+            <select name="Country of residence" id="Country" required="required">
+                <option value="Australia">Australia</option>
+                <option value="Canada">Canada</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+            </select>
+            <h3>Occupation</h3>
+            <select name="Occupation" id="Occupation" required="required">
+                <option value="Managment">Management</option>
+                <option value="Manual">Manual</option>
+                <option value="Professional">Professional</option>
+                <option value="Skilled Manual">Skilled Manual</option>
+            </select>
+            <h3>gender</h3>
+            <select name="gender" id="gender" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <h3>Marital Status</h3>
+            <select name="Marital Status" id="Marital Status" required="required">
+                <option value="S">S</option>
+                <option value="M">M</option>
+            </select>
+            <h3>Education Level</h3>
+            <select name="Education Level" id="Education" required="required">
+                <option value="Bachelors">Bachelors</option>
+                <option value="Graduate Degree">Graduate Degree</option>
+                <option value="High School">High School</option>
+                <option value="Partial High School">Partial High School</option>
+                <option value="Partial College">Partial College</option>
+            </select>
+            <br><br><button id="sub" type="submit">Purchase Decision</button>
+            <br>
+
+
+
+
+        </form>        
+        <form class="" method="post" action="{{url_for('data')}}" enctype=multipart/form-data>
+            <input type="file" name="file" value="">
+            <input type="submit" name="" value="submit" />
+        </form>
+
+        <br><br><h3>{{ prediction_text }}</h3>
+        <br><br><h3>{{ predict_multiple }}</h3>
+        <a href="{{url_for('download_file')}}" >download information</a>
+    </div>
+
+</body>
+
+</html>
